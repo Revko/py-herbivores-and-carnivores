@@ -1,5 +1,4 @@
 from __future__ import annotations
-from typing import Any
 
 
 class Animal:
@@ -23,13 +22,13 @@ class Animal:
 
 
 class Herbivore(Animal):
-    def hide(self) -> Any:
+    def hide(self) -> None:
         self.hidden = not self.hidden
 
 
 class Carnivore(Animal):
-    @classmethod
-    def bite(cls, animal: Herbivore) -> None:
+    @staticmethod
+    def bite(animal: Herbivore) -> None:
         if isinstance(animal, Herbivore):
             if animal.hidden is False:
                 animal.health -= 50
